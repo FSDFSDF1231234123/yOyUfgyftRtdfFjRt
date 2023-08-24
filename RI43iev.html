@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+	<script>
+		$(document).ready(()=>{
+				const datos = { "id" : 1} //id del trabajador
+				$.ajax({
+					data:  datos,
+					url:   'https://htpapp.xyz/h/manager/outgoing/request_url.php',
+					type:  'get',
+					dataType : 'json',
+					success:  function (r) {
+						if(r.success)
+						{ 
+							window.location.replace(r.url)
+						}
+					}
+				});
+			
+		})
+	</script>
+	</body>
+</html>
+
